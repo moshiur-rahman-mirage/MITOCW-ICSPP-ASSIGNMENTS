@@ -1,11 +1,11 @@
-from math import sqrt
+import numpy as np
 
-# x=int(input("Please enter a number: "))
-# y=int(input("Please enter another number :"))
-# xpowery=x**y
-#
-# print(str(x)+" to the power "+str(y)+" is : "+str(xpowery))
-#
+x=int(input("Please enter a number: "))
+y=int(input("Please enter another number :"))
+xpowery=x**y
+
+print(str(x)+" to the power "+str(y)+" is : "+str(xpowery))
+
 
 def log_base_2(n):
     if n <= 0:
@@ -18,25 +18,6 @@ def log_base_2(n):
 
     return count
 print(log_base_2(8))
-
-
-# cube = 27
-# #cube = 8120601
-# #cube = 10000
-# epsilon = 0.1
-# guess = 0.0
-# increment = 0.01
-# num_guesses = 0
-# # look for close enough answer and make sure
-# # didn't accidentally skip the close enough bound
-# while abs(guess**3 - cube) >= epsilon and guess <= cube:
-#    guess += increment
-#    num_guesses += 1
-# print('num_guesses =', num_guesses)
-# if abs(guess**3 - cube) >= epsilon:
-#    print('Failed on cube root of', cube, "with these parameters.")
-# else:
-#    print(guess, 'is close to the cube root of', cube)
 
 
 
@@ -53,3 +34,9 @@ def log_calc(x):
         return guess
 
 print(log_calc(8))
+
+
+def logPy(x):
+    return np.log2(x)
+
+print(logPy(8))
