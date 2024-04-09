@@ -13,7 +13,7 @@ import random
 import string
 
 WORDLIST_FILENAME = "words.txt"
-
+alphabet="abcdefghijklmnopqrstuvwxyz"
 
 def load_words():
     """
@@ -73,8 +73,8 @@ def is_word_guessed(secret_word, letters_guessed):
             return True
 
 
-secret_word = 'apple'
-letters_guessed = ['e', 'i', 'k', 'p', 'r', 's']
+
+
 def get_guessed_word(secret_word, letters_guessed):
     '''
     secret_word: string, the word the user is guessing
@@ -91,7 +91,7 @@ def get_guessed_word(secret_word, letters_guessed):
     return  string_word
 
 
-print(get_guessed_word(secret_word, letters_guessed))
+
 
 def get_available_letters(letters_guessed):
     '''
@@ -99,8 +99,13 @@ def get_available_letters(letters_guessed):
     returns: string (of letters), comprised of letters that represents which letters have not
       yet been guessed.
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    available=""
+    for i in alphabet:
+        if i not in letters_guessed:
+            available=available+i
+    return available
+
+
     
 
 def hangman(secret_word):
@@ -129,7 +134,15 @@ def hangman(secret_word):
     Follows the other limitations detailed in the problem write-up.
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    print("Welcome to the letter hangman")
+    print("I am thinking of a word that is "+ str(len(secret_word))+" characters long!")
+    print("-----------------")
+    print("You have 6 guess left")
+    print("Available letters "+alphabet)
+    guessed_letter=input("Please guess a letter")
+    if is_word_guessed(secret_word,guessed_letter)==True:
+        print("Good Guess "+get_guessed_word(secret_word,guessed_letter))
+
 
 
 
@@ -216,7 +229,8 @@ if __name__ == "__main__":
     # To test part 2, comment out the pass line above and
     # uncomment the following two lines.
     
-    secret_word = choose_word(wordlist)
+    # secret_word = choose_word(wordlist)
+    secret_word="apple"
     hangman(secret_word)
 
 ###############
